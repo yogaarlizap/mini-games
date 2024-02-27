@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mini Games Battle</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <div class="col-xl-12 row">
+        <div class="col-md-4">
+          <div id="tim-merah">
+            <h2>Tim Merah</h2>
+            <div class="baris-char">
+              <div class="text-center row float-center">
+                <div class="col-md-3 char">
+                  <button onclick="pickCharMerah('A')" class="character">
+                    A
+                  </button>
+                </div>
+                <div class="col-md-3 char">
+                  <button onclick="pickCharMerah('B')" class="character">
+                    B
+                  </button>
+                </div>
+                <div class="col-md-3 char">
+                  <button onclick="pickCharMerah('C')" class="character">
+                    C
+                  </button>
+                </div>
+                <div class="col-md-3 char">
+                  <button onclick="pickCharMerah('D')" class="character">
+                    D
+                  </button>
+                </div>
+                <div class="col-md-3 char">
+                  <button onclick="pickCharMerah('E')" class="character">
+                    E
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="random-char">
+              <button onclick="randomCharMerah()" class="random-button-char-merah">Random Char</button>
+            </div>
+            <div class="random-skill">
+              <button onclick="randomSkillMerah()" class="random-button-skill-merah">Random Skill</button>
+            </div>
+            <div class="skill-list">
+              <h3>Skill</h3>
+              <div class="text-center">
+                <button onclick="skillMerah(1)" id="skill-button-merah-1" class="skill-1">1</button>
+                <button onclick="skillMerah(2)" id="skill-button-merah-2" class="skill-2">2</button>
+                <button onclick="skillMerah(3)" id="skill-button-merah-3" class="skill-3">3</button>
+              </div>
+            </div>
+            <div class="item-list">
+              <h3>Item</h3>
+              <div class="text-center">
+                <button class="item-1">1</button>
+                <button class="item-2">2</button>
+                <button class="item-3">3</button>
+                <button class="item-4">4</button>
+                <button class="item-5">5</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="round-count">
+            <h2>Round</h2>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="round-merah">
+                  <h1 id="text-round-merah">0</h1>
+                </div>
+                <div class="round-biru">
+                  <h1 id="text-round-biru">0</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="step">
+            <h2>Step</h2>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="step-merah">
+                  <h1 id="text-step-merah">0</h1>
+                </div>
+                <div class="step-biru">
+                  <h1 id="text-step-biru">0</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="start-battle">
+            <button onclick="startBattle()" id="start-battle-button">Start Battle</button>
+          </div>
+          <div id="field">
+            <div class="field-merah">
+              <h1 id="text-field-merah"></h1>
+
+              <div id="attribute-merah">
+                <span class="health-point-merah">
+                  HP : 50
+                </span>
+                <br>
+                <span class="defend-point-merah">
+                  Def : 10
+                </span>
+              </div>
+            </div>
+            <div class="field-biru">
+              <h1 id="text-field-biru"></h1>
+
+              <div id="attribute-biru">
+                <span class="health-point-biru">
+                  HP : 50
+                </span>
+                <br>
+                <span class="defend-point-biru">
+                  Def : 10
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="tim-biru">
+            <h2>Tim Biru</h2>
+            <div class="baris-char">
+              <div class="row text-center">
+                <div class="col-md-3 char">
+                  <button onclick="pickCharBiru('F')" class="character">F</button>
+                </div>
+                <div class="col-md-3 char">
+                  <button onclick="pickCharBiru('G')" class="character">G</button>
+                </div>
+                <div class="col-md-3 char">
+                  <button onclick="pickCharBiru('H')" class="character">H</button>
+                </div>
+                <div class="col-md-3 char">
+                  <button onclick="pickCharBiru('I')" class="character">I</button>
+                </div>
+                <div class="col-md-3 char">
+                  <button onclick="pickCharBiru('J')" class="character">J</button>
+                </div>
+              </div>
+            </div>
+            <div class="random-char">
+              <button onclick="randomCharBiru()" class="random-button-char-biru">Random Char</button>
+            </div>
+            <div class="random-skill">
+              <button onclick="randomSkillBiru()" class="random-button-skill-biru">Random Skill</button>
+            </div>
+            <div class="skill-list">
+              <h3>Skill</h3>
+              <div class="text-center">
+                <button onclick="skillBiru(1)" id="skill-button-biru-1" class="skill-1">1</button>
+                <button onclick="skillBiru(2)" id="skill-button-biru-2" class="skill-2">2</button>
+                <button onclick="skillBiru(3)" id="skill-button-biru-3" class="skill-3">3</button>
+              </div>
+            </div>
+            <div class="item-list">
+              <h3>Item</h3>
+              <div class="text-center">
+                <button class="item-1">1</button>
+                <button class="item-2">2</button>
+                <button class="item-3">3</button>
+                <button class="item-4">4</button>
+                <button class="item-5">5</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

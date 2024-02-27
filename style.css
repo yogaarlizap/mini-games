@@ -1,0 +1,209 @@
+#game-container {
+  margin: auto;
+  width: 100%;
+  /* border: 3px solid green; */
+  padding: 70px 0;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+#tim-merah,
+#tim-biru {
+  width: 100%;
+  padding: 10px;
+  /* border: 1px solid black; */
+  margin-left: 10px;
+  display: grid;
+  place-items: center;
+}
+
+#karakter-merah,
+#karakter-biru #round-count {
+  list-style: none;
+  padding: 0;
+}
+
+#log-pertempuran {
+  height: 100px;
+  border: 1px solid black;
+  overflow-y: scroll;
+}
+
+#btn-mulai {
+  margin-top: 10px;
+}
+
+.char {
+  /* border: 1px solid black; */
+  display: grid;
+  place-items: center;
+}
+
+.character{
+  height: 50px;
+  width: 50px;
+  font: 20px bold;
+}
+
+div .char {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+#baris-char .row {
+  padding: 50%;
+}
+
+#round-count {
+  /* border: 1px solid red; */
+  display: grid;
+  place-items: center;
+}
+
+.round-merah,
+.round-biru {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  /* padding: 70px 0; */
+  display: grid;
+  float: left;
+  text-align: center;
+  place-items: center;
+}
+
+.round-merah,
+.round-biru,
+#text-round-merah,
+#text-round-biru {
+  margin: 0 auto;
+}
+
+/* div {
+  border-color: red;
+  border-style: solid;
+  border-width: 1px 1px 1px 0;
+} */
+
+.random-button-char-merah,
+.random-button-char-biru {
+  margin-top: 100px;
+  width: 100px;
+  height: 100px;
+  font-size: 20px;
+}
+
+#step {
+  margin-top: 50px;
+  display: grid;
+  place-items: center;
+}
+
+.step-merah,
+.step-biru {
+  border: 1px solid black;
+  width: 80px;
+  height: 80px;
+  /* padding: 70px 0; */
+  display: grid;
+  float: left;
+  margin: 10px;
+  text-align: center;
+  place-items: center;
+}
+
+.step-merah,
+.step-biru,
+#text-step-merah,
+#text-step-biru {
+  margin: 0 auto;
+}
+
+#field {
+  margin-top: 50px;
+  /* border: 5px solid green; */
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.field-merah,
+.field-biru {
+  border: 1px solid black;
+  width: 50%;
+  height: 100%;
+  /* padding: 70px 0; */
+  display: grid;
+  float: left;
+  text-align: center;
+  place-items: center;
+}
+
+.field-merah,
+.field-biru,
+#text-field-merah,
+#text-field-biru {
+  font-size: 150px;
+}
+
+.random-skill{
+  margin-top: 200px;
+}
+
+.random-button-skill-biru, .random-button-skill-merah{
+  height: 100px;
+  font-size: 20px;
+}
+
+.skill-list{
+  margin-top: 20px;
+}
+
+.skill-1, .skill-2, .skill-3{
+  margin-right: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+.item-list{
+  margin-top: 20px;
+}
+
+.item-1, .item-2, .item-3, .item-4, .item-5{
+  margin-right: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+#attribute-merah {
+  height: 100px;
+  width: 200px;
+  font-size: 30px;
+  text-align: left;
+}
+
+#attribute-biru {
+  /* border: 1px solid black; */
+  height: 100px;
+  width: 200px;
+  font-size: 30px;
+  text-align: right;
+}
+
+.health-point-merah, .health-point-biru, .defend-point-merah, .defend-point-biru{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.start-battle{
+  margin-top: 40px;
+}
+
+#start-battle-button{
+  font-size: 20px;
+}
