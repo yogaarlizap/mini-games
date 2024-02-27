@@ -207,3 +207,19 @@ div .char {
 #start-battle-button{
   font-size: 20px;
 }
+
+.log-merah{
+  margin-top: 70px;
+  border: 1px solid black;
+  height: 200px;
+  width: auto;
+  overflow-y: auto;
+}
+
+.log-biru{
+  margin-top: 70px;
+  border: 1px solid black;
+  height: 200px;
+  width: auto;
+  overflow-y: auto;
+}

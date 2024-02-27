@@ -35,17 +35,16 @@ function startBattle(){
 
 function checkStepMerah(step){
   if(step == 1){
-    $("#skill-button-biru-1, #skill-button-biru-2, #skill-button-biru-3").attr(
-      "disabled",
-      true
-    );
-    $(".random-button-skill-biru").attr("disabled", true);
-  }else{
     $("#skill-button-merah-1, #skill-button-merah-2, #skill-button-merah-3").attr(
       "disabled",
-      true
+      false
     );
-    $(".random-button-skill-merah").attr("disabled", true);
+    $(".random-button-skill-merah").attr("disabled", false);
+  }else{
+    $(
+      "#skill-button-biru-1, #skill-button-biru-2, #skill-button-biru-3"
+    ).attr("disabled", false);
+    $(".random-button-skill-biru").attr("disabled", false);
   }
 }
 
@@ -75,6 +74,53 @@ function skillMerah(number){
     false
   );
   $(".random-button-skill-biru").attr("disabled", false);
+
+  var skill = {
+    1: {
+      damage: randomIntFromInterval(1, 5)
+    },
+    2: {
+      damage: randomIntFromInterval(5, 10)
+    },
+    3: {
+      damage: randomIntFromInterval(10, 15)
+    }
+  }
+
+  var defense = $('#defend-biru').val()
+  var damage = skill[number].damage;
+  var hpBiru = $("#hp-biru").val()
+  var hitung = defense - damage;
+  if(defense > 0){
+    if(hitung < 0){
+      $("#defend-biru").val(0);
+      $(".defend-point-biru").text(`Def : 0`);
+
+      var hitungHp = hpBiru - Math.abs(hitung);
+
+      $(".health-point-biru").text(`HP : ${hitungHp}`);
+      $("#hp-biru").val(hitungHp);
+    }else{
+      $("#defend-biru").val(hitung);
+      $(".defend-point-biru").text(`Def : ${hitung}`);
+    }
+  }else if(defense == 0){
+    if(hpBiru > 0){
+      var hitungHp = hpBiru - Math.abs(hitung);
+
+      if(hitungHp > 0){
+        $(".health-point-biru").text(`HP : ${hitungHp}`);
+        $("#hp-biru").val(hitungHp);
+      }else{
+        $(".health-point-biru").text(`HP : 0`);
+        $("#hp-biru").val(0);
+
+        alert("Tim Biru Kalah")
+      }
+    }
+  }
+
+  $("#log-list-merah").append(`<li>Memberikan Damage ${damage}</li>`);
 }
 
 function skillBiru(number) {
@@ -91,3 +137,6 @@ function skillBiru(number) {
   $(".random-button-skill-merah").attr("disabled", false);
 }
 
+function randomIntFromInterval(min, max) { // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}

@@ -50,25 +50,30 @@
               <button onclick="randomCharMerah()" class="random-button-char-merah">Random Char</button>
             </div>
             <div class="random-skill">
-              <button onclick="randomSkillMerah()" class="random-button-skill-merah">Random Skill</button>
+              <button onclick="randomSkillMerah()" class="random-button-skill-merah" disabled="true">Random Skill</button>
             </div>
             <div class="skill-list">
               <h3>Skill</h3>
               <div class="text-center">
-                <button onclick="skillMerah(1)" id="skill-button-merah-1" class="skill-1">1</button>
-                <button onclick="skillMerah(2)" id="skill-button-merah-2" class="skill-2">2</button>
-                <button onclick="skillMerah(3)" id="skill-button-merah-3" class="skill-3">3</button>
+                <button onclick="skillMerah(1)" id="skill-button-merah-1" class="skill-1" disabled="true">1</button>
+                <button onclick="skillMerah(2)" id="skill-button-merah-2" class="skill-2" disabled="true">2</button>
+                <button onclick="skillMerah(3)" id="skill-button-merah-3" class="skill-3" disabled="true">3</button>
               </div>
             </div>
             <div class="item-list">
               <h3>Item</h3>
               <div class="text-center">
-                <button class="item-1">1</button>
-                <button class="item-2">2</button>
-                <button class="item-3">3</button>
-                <button class="item-4">4</button>
-                <button class="item-5">5</button>
+                <button class="item-1" disabled="true">1</button>
+                <button class="item-2" disabled="true">2</button>
+                <button class="item-3" disabled="true">3</button>
+                <button class="item-4" disabled="true">4</button>
+                <button class="item-5" disabled="true">5</button>
               </div>
+            </div>
+            <div class="log-merah">
+              <span>Log List</span>
+              <ul id="log-list-merah">
+              </ul>
             </div>
           </div>
         </div>
@@ -123,10 +128,12 @@
                 <span class="health-point-biru">
                   HP : 50
                 </span>
+                <input type="hidden" id="hp-biru" value="50">
                 <br>
                 <span class="defend-point-biru">
                   Def : 10
                 </span>
+                <input type="hidden" id="defend-biru" value="10">
               </div>
             </div>
 
@@ -158,14 +165,14 @@
               <button onclick="randomCharBiru()" class="random-button-char-biru">Random Char</button>
             </div>
             <div class="random-skill">
-              <button onclick="randomSkillBiru()" class="random-button-skill-biru">Random Skill</button>
+              <button onclick="randomSkillBiru()" class="random-button-skill-biru" disabled="true">Random Skill</button>
             </div>
             <div class="skill-list">
               <h3>Skill</h3>
               <div class="text-center">
-                <button onclick="skillBiru(1)" id="skill-button-biru-1" class="skill-1">1</button>
-                <button onclick="skillBiru(2)" id="skill-button-biru-2" class="skill-2">2</button>
-                <button onclick="skillBiru(3)" id="skill-button-biru-3" class="skill-3">3</button>
+                <button onclick="skillBiru(1)" id="skill-button-biru-1" class="skill-1" disabled="true">1</button>
+                <button onclick="skillBiru(2)" id="skill-button-biru-2" class="skill-2" disabled="true">2</button>
+                <button onclick="skillBiru(3)" id="skill-button-biru-3" class="skill-3" disabled="true">3</button>
               </div>
             </div>
             <div class="item-list">
