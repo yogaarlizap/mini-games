@@ -1,9 +1,11 @@
 function pickCharMerah(character){
   $("#text-field-merah").text(character);
+  $("#char-merah").val(character);
 }
 
 function pickCharBiru(character) {
   $("#text-field-biru").text(character);
+  $("#char-biru").val(character);
 }
 
 function randomCharMerah(){
@@ -19,6 +21,9 @@ function randomCharBiru() {
 }
 
 function startBattle(){
+  var charMerah = $("#char-merah").val();
+  var charBiru = $("#char-biru").val();
+
   $(".character").attr("disabled", true);
   $(".random-button-char-merah").attr("disabled", true);
   $(".random-button-char-biru").attr("disabled", true);
@@ -135,6 +140,53 @@ function skillBiru(number) {
     false
   );
   $(".random-button-skill-merah").attr("disabled", false);
+
+  var skill = {
+    1: {
+      damage: randomIntFromInterval(1, 5),
+    },
+    2: {
+      damage: randomIntFromInterval(5, 10),
+    },
+    3: {
+      damage: randomIntFromInterval(10, 15),
+    },
+  };
+
+  var defense = $("#defend-merah").val();
+  var damage = skill[number].damage;
+  var hpMerah = $("#hp-merah").val();
+  var hitung = defense - damage;
+  if (defense > 0) {
+    if (hitung < 0) {
+      $("#defend-merah").val(0);
+      $(".defend-point-merah").text(`Def : 0`);
+
+      var hitungHp = hpMerah - Math.abs(hitung);
+
+      $(".health-point-merah").text(`HP : ${hitungHp}`);
+      $("#hp-merah").val(hitungHp);
+    } else {
+      $("#defend-merah").val(hitung);
+      $(".defend-point-merah").text(`Def : ${hitung}`);
+    }
+  } else if (defense == 0) {
+    if (hpMerah > 0) {
+      var hitungHp = hpMerah - Math.abs(hitung);
+
+      if (hitungHp > 0) {
+        $(".health-point-merah").text(`HP : ${hitungHp}`);
+        $("#hp-merah").val(hitungHp);
+      } else {
+        $(".health-point-merah").text(`HP : 0`);
+        $("#hp-merah").val(0);
+
+        alert("Tim merah Kalah");
+      }
+    }
+  }
+
+  $("#log-list-biru").append(`<li>Memberikan Damage ${damage}</li>`);
 }
 
 function randomIntFromInterval(min, max) { // min and max included

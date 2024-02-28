@@ -109,13 +109,16 @@
           </div>
           <div id="field">
             <div class="field-merah">
+              <input type="hidden" id="char-merah" value="">
               <h1 id="text-field-merah"></h1>
 
               <div id="attribute-merah">
+                <input type="hidden" id="hp-merah" value="50">
                 <span class="health-point-merah">
                   HP : 50
                 </span>
                 <br>
+                <input type="hidden" id="defend-merah" value="10">
                 <span class="defend-point-merah">
                   Def : 10
                 </span>
@@ -123,7 +126,7 @@
             </div>
             <div class="field-biru">
               <h1 id="text-field-biru"></h1>
-
+              <input type="hidden" id="char-biru" value="">
               <div id="attribute-biru">
                 <span class="health-point-biru">
                   HP : 50
@@ -178,12 +181,17 @@
             <div class="item-list">
               <h3>Item</h3>
               <div class="text-center">
-                <button class="item-1">1</button>
-                <button class="item-2">2</button>
-                <button class="item-3">3</button>
-                <button class="item-4">4</button>
-                <button class="item-5">5</button>
+                <button class="item-1" disabled="true">1</button>
+                <button class="item-2" disabled="true">2</button>
+                <button class="item-3" disabled="true">3</button>
+                <button class="item-4" disabled="true">4</button>
+                <button class="item-5" disabled="true">5</button>
               </div>
+            </div>
+            <div class="log-biru">
+              <span>Log List</span>
+              <ul id="log-list-biru">
+              </ul>
             </div>
           </div>
         </div>
