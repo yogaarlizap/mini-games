@@ -212,7 +212,7 @@ div .char {
   margin-top: 70px;
   border: 1px solid black;
   height: 200px;
-  width: auto;
+  width: 325px;
   overflow-y: auto;
 }
 
@@ -220,6 +220,6 @@ div .char {
   margin-top: 70px;
   border: 1px solid black;
   height: 200px;
-  width: auto;
+  width: 325px;
   overflow-y: auto;
 }

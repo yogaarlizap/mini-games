@@ -20,60 +20,91 @@
             <div class="baris-char">
               <div class="text-center row float-center">
                 <div class="col-md-3 char">
-                  <button onclick="pickCharMerah('A')" class="character">
+                  <button onclick="pickCharMerah('A')" id="char-a" class="character">
                     A
                   </button>
                 </div>
                 <div class="col-md-3 char">
-                  <button onclick="pickCharMerah('B')" class="character">
+                  <button onclick="pickCharMerah('B')" id="char-b" class="character">
                     B
                   </button>
                 </div>
                 <div class="col-md-3 char">
-                  <button onclick="pickCharMerah('C')" class="character">
+                  <button onclick="pickCharMerah('C')" id="char-c" class="character">
                     C
                   </button>
                 </div>
                 <div class="col-md-3 char">
-                  <button onclick="pickCharMerah('D')" class="character">
+                  <button onclick="pickCharMerah('D')" id="char-d" class="character">
                     D
                   </button>
                 </div>
                 <div class="col-md-3 char">
-                  <button onclick="pickCharMerah('E')" class="character">
+                  <button onclick="pickCharMerah('E')" id="char-e" class="character">
                     E
                   </button>
                 </div>
               </div>
             </div>
             <div class="random-char">
-              <button onclick="randomCharMerah()" class="random-button-char-merah">Random Char</button>
+              <button
+                onclick="randomCharMerah()"
+                class="random-button-char-merah"
+              >
+                Random Char
+              </button>
             </div>
             <div class="random-skill">
-              <button onclick="randomSkillMerah()" class="random-button-skill-merah" disabled="true">Random Skill</button>
+              <button
+                onclick="randomSkillMerah()"
+                class="random-button-skill-merah"
+                disabled="true"
+              >
+                Random Skill
+              </button>
             </div>
             <div class="skill-list">
               <h3>Skill</h3>
               <div class="text-center">
-                <button onclick="skillMerah(1)" id="skill-button-merah-1" class="skill-1" disabled="true">1</button>
-                <button onclick="skillMerah(2)" id="skill-button-merah-2" class="skill-2" disabled="true">2</button>
-                <button onclick="skillMerah(3)" id="skill-button-merah-3" class="skill-3" disabled="true">3</button>
+                <button
+                  onclick="skillMerah(1)"
+                  id="skill-button-merah-1"
+                  class="skill-1"
+                  disabled="true"
+                >
+                  1
+                </button>
+                <button
+                  onclick="skillMerah(2)"
+                  id="skill-button-merah-2"
+                  class="skill-2"
+                  disabled="true"
+                >
+                  2
+                </button>
+                <button
+                  onclick="skillMerah(3)"
+                  id="skill-button-merah-3"
+                  class="skill-3"
+                  disabled="true"
+                >
+                  3
+                </button>
               </div>
             </div>
             <div class="item-list">
               <h3>Item</h3>
               <div class="text-center">
-                <button class="item-1" disabled="true">1</button>
-                <button class="item-2" disabled="true">2</button>
-                <button class="item-3" disabled="true">3</button>
-                <button class="item-4" disabled="true">4</button>
-                <button class="item-5" disabled="true">5</button>
+                <button class="item-1" id="item-button-merah-1" onclick="itemMerah(1)" disabled="true">1</button>
+                <button class="item-2" id="item-button-merah-2" onclick="itemMerah(2)" disabled="true">2</button>
+                <button class="item-3" id="item-button-merah-3" onclick="itemMerah(3)" disabled="true">3</button>
+                <button class="item-4" id="item-button-merah-4" onclick="itemMerah(4)" disabled="true">4</button>
+                <button class="item-5" id="item-button-merah-5" onclick="itemMerah(5)" disabled="true">5</button>
               </div>
             </div>
             <div class="log-merah">
               <span>Log List</span>
-              <ul id="log-list-merah">
-              </ul>
+              <ul id="log-list-merah"></ul>
             </div>
           </div>
         </div>
@@ -83,9 +114,11 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="round-merah">
+                  <input type="hidden" id="value-round-merah" value="0">
                   <h1 id="text-round-merah">0</h1>
                 </div>
                 <div class="round-biru">
+                  <input type="hidden" id="value-round-biru" value="0">
                   <h1 id="text-round-biru">0</h1>
                 </div>
               </div>
@@ -105,41 +138,34 @@
             </div>
           </div>
           <div class="start-battle">
-            <button onclick="startBattle()" id="start-battle-button">Start Battle</button>
+            <button onclick="startBattle()" id="start-battle-button">
+              Start Battle
+            </button>
           </div>
           <div id="field">
             <div class="field-merah">
-              <input type="hidden" id="char-merah" value="">
+              <input type="hidden" id="char-merah" value="null"/>
               <h1 id="text-field-merah"></h1>
 
               <div id="attribute-merah">
-                <input type="hidden" id="hp-merah" value="50">
-                <span class="health-point-merah">
-                  HP : 50
-                </span>
-                <br>
-                <input type="hidden" id="defend-merah" value="10">
-                <span class="defend-point-merah">
-                  Def : 10
-                </span>
+                <input type="hidden" id="hp-merah" value="50" />
+                <span class="health-point-merah"> HP : 50 </span>
+                <br />
+                <input type="hidden" id="defend-merah" value="10" />
+                <span class="defend-point-merah"> Def : 10 </span>
               </div>
             </div>
             <div class="field-biru">
               <h1 id="text-field-biru"></h1>
-              <input type="hidden" id="char-biru" value="">
+              <input type="hidden" id="char-biru" value="null"/>
               <div id="attribute-biru">
-                <span class="health-point-biru">
-                  HP : 50
-                </span>
-                <input type="hidden" id="hp-biru" value="50">
-                <br>
-                <span class="defend-point-biru">
-                  Def : 10
-                </span>
-                <input type="hidden" id="defend-biru" value="10">
+                <span class="health-point-biru"> HP : 50 </span>
+                <input type="hidden" id="hp-biru" value="50" />
+                <br />
+                <span class="defend-point-biru"> Def : 10 </span>
+                <input type="hidden" id="defend-biru" value="10" />
               </div>
             </div>
-
           </div>
         </div>
         <div class="col-md-4">
@@ -148,50 +174,91 @@
             <div class="baris-char">
               <div class="row text-center">
                 <div class="col-md-3 char">
-                  <button onclick="pickCharBiru('F')" class="character">F</button>
+                  <button onclick="pickCharBiru('F')" id="char-f" class="character">
+                    F
+                  </button>
                 </div>
                 <div class="col-md-3 char">
-                  <button onclick="pickCharBiru('G')" class="character">G</button>
+                  <button onclick="pickCharBiru('G')" id="char-g" class="character">
+                    G
+                  </button>
                 </div>
                 <div class="col-md-3 char">
-                  <button onclick="pickCharBiru('H')" class="character">H</button>
+                  <button onclick="pickCharBiru('H')" id="char-h" class="character">
+                    H
+                  </button>
                 </div>
                 <div class="col-md-3 char">
-                  <button onclick="pickCharBiru('I')" class="character">I</button>
+                  <button onclick="pickCharBiru('I')" id="char-i" class="character">
+                    I
+                  </button>
                 </div>
                 <div class="col-md-3 char">
-                  <button onclick="pickCharBiru('J')" class="character">J</button>
+                  <button onclick="pickCharBiru('J')" id="char-j" class="character">
+                    J
+                  </button>
                 </div>
               </div>
             </div>
             <div class="random-char">
-              <button onclick="randomCharBiru()" class="random-button-char-biru">Random Char</button>
+              <button
+                onclick="randomCharBiru()"
+                class="random-button-char-biru"
+              >
+                Random Char
+              </button>
             </div>
             <div class="random-skill">
-              <button onclick="randomSkillBiru()" class="random-button-skill-biru" disabled="true">Random Skill</button>
+              <button
+                onclick="randomSkillBiru()"
+                class="random-button-skill-biru"
+                disabled="true"
+              >
+                Random Skill
+              </button>
             </div>
             <div class="skill-list">
               <h3>Skill</h3>
               <div class="text-center">
-                <button onclick="skillBiru(1)" id="skill-button-biru-1" class="skill-1" disabled="true">1</button>
-                <button onclick="skillBiru(2)" id="skill-button-biru-2" class="skill-2" disabled="true">2</button>
-                <button onclick="skillBiru(3)" id="skill-button-biru-3" class="skill-3" disabled="true">3</button>
+                <button
+                  onclick="skillBiru(1)"
+                  id="skill-button-biru-1"
+                  class="skill-1"
+                  disabled="true"
+                >
+                  1
+                </button>
+                <button
+                  onclick="skillBiru(2)"
+                  id="skill-button-biru-2"
+                  class="skill-2"
+                  disabled="true"
+                >
+                  2
+                </button>
+                <button
+                  onclick="skillBiru(3)"
+                  id="skill-button-biru-3"
+                  class="skill-3"
+                  disabled="true"
+                >
+                  3
+                </button>
               </div>
             </div>
             <div class="item-list">
               <h3>Item</h3>
               <div class="text-center">
-                <button class="item-1" disabled="true">1</button>
-                <button class="item-2" disabled="true">2</button>
-                <button class="item-3" disabled="true">3</button>
-                <button class="item-4" disabled="true">4</button>
-                <button class="item-5" disabled="true">5</button>
+                <button class="item-1" id="item-button-biru-1" onclick="itemBiru(1)" disabled="true">1</button>
+                <button class="item-2" id="item-button-biru-2" onclick="itemBiru(2)" disabled="true">2</button>
+                <button class="item-3" id="item-button-biru-3" onclick="itemBiru(3)" disabled="true">3</button>
+                <button class="item-4" id="item-button-biru-4" onclick="itemBiru(4)" disabled="true">4</button>
+                <button class="item-5" id="item-button-biru-5" onclick="itemBiru(5)" disabled="true">5</button>
               </div>
             </div>
             <div class="log-biru">
               <span>Log List</span>
-              <ul id="log-list-biru">
-              </ul>
+              <ul id="log-list-biru"></ul>
             </div>
           </div>
         </div>
