@@ -270,6 +270,14 @@ function endGame(team) {
   );
   $(".random-button-skill-biru").attr("disabled", true);
 
+  $(
+    "#item-button-biru-1, #item-button-biru-2, #item-button-biru-3, #item-button-biru-4, #item-button-biru-5"
+  ).attr("disabled", true);
+
+  $(
+    "#item-button-merah-1, #item-button-merah-2, #item-button-merah-3, #item-button-merah-4, #item-button-merah-5"
+  ).attr("disabled", true);
+
   var roundValue = parseInt($(`#value-round-${team}`).val());
   var hitungWin = roundValue + 1;
   $(`#text-round-${team}`).text(hitungWin);
